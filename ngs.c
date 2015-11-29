@@ -7,9 +7,13 @@ int reads_from_file(char * szReadsPath) {
 	fp = fopen(szReadsPath,"r");
 	if (fp == NULL) {
 		printf("\nError opening file");
-	}
+	} else {
+            /*Here we will process the reads file */
+            
+            fclose(fp);
+        }
 
-	fclose(fp);
+	
 
 	return 1;
 }
