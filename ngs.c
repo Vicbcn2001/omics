@@ -10,6 +10,12 @@ int reads_from_file(char * szReadsPath) {
 	} else {
             /*Here we will process the reads file */
             
+            char buffer[1024];
+            while (!feof(fp)) {
+                /*Process reads by blocks*/
+                fread((void*)buffer,sizeof(char),1024,fp);
+                
+            }            
             fclose(fp);
         }
 
