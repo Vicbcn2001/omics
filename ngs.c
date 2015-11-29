@@ -9,13 +9,17 @@ int reads_from_file(char * szReadsPath) {
 		printf("\nError opening file");
 	} else {
             /*Here we will process the reads file */
-	    char * buffer = NULL;
-	    while (!fp) {
-		fread((void*)buffer,1,100,fp);
-	    }
             
+            char buffer[128];
+            while (!feof(fp)) {
+                /*Process reads by blocks*/
+                fread((void*)buffer,sizeof(char),128,fp);
+                
+            }            
             fclose(fp);
         }
+
+	
 
 	return 1;
 }
